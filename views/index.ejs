@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Group Chat</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type ="text/javascript">
+		$(document).ready(function (){
+		})
+</script>
+</head>
+<body>
+
+	<% if(typeof(errors) != 'undefined'){ %>
+		<% console.log("hi") %>
+		<% for (var err in errors){ %>
+			<p><%= errors[err].message %></p>
+		<% } %>
+	<% } %>
+
+	<p id="display"></p>
+	<form action='/quotes' method='post'>
+		<p>Your Name: <input type='text' name='name'></p>
+		<p>Your Quote: <input type='text' name='quote'></p>
+		<input type='submit' value='Add Quote'>
+	</form>
+	<form method='get' action='/load_quotes'> <button type="submit">Skip to Quotes</button></form>
+</body>
+</html>
